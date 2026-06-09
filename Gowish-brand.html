@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0A0A" />
+<title>GoWish × Brand × Celebrity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0A0A0A;
+    --paper: #F7F4EE;
+    --beige: #E8DFD1;
+    --taupe: #C9A88B;
+    --muted: #6B6560;
+    --hairline: rgba(10,10,10,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(247,244,238,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--hairline);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── SECTIONS ── */
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 80px 80px;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    section {
+      padding: 88px 20px 56px;
+      min-height: unset;
+    }
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+
+    .body-lead {
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    /* Stat grid: 2 cols on mobile */
+    .stat-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 48px;
+    }
+    .stat {
+      padding: 0 16px 24px 0;
+    }
+
+    /* Party grid: single col */
+    .party-grid {
+      grid-template-columns: 1fr;
+      margin-top: 36px;
+    }
+    .party-card { padding: 32px 24px; }
+
+    /* Metrics grid: 2 cols */
+    .metrics-grid {
+      grid-template-columns: 1fr 1fr;
+      margin-top: 32px;
+    }
+    .metric-card { padding: 24px 20px; }
+    .metric-num { font-size: 28px; }
+
+    /* Commercial */
+    .commercial-item {
+      gap: 20px;
+      padding: 24px 0;
+    }
+    .commercial-n { font-size: 32px; width: 40px; }
+
+    /* Pillars */
+    .pillar {
+      gap: 20px;
+      padding: 28px 0;
+      flex-direction: column;
+    }
+    .pillar-n {
+      font-size: 36px;
+      width: auto;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      padding-left: 20px;
+      margin: 32px 0;
+    }
+
+    /* Awards badges: stack vertically */
+    .awards-row {
+      flex-direction: column !important;
+    }
+
+    /* Platform "why scale" 3-col grid */
+    .scale-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Cover CTA row */
+    .cta-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    /* Closing */
+    #closing { padding: 80px 20px 60px; }
+
+    /* Case studies: stack on mobile */
+    #cases .fade-in > div[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .display-xl {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+  }
+
+  .display-lg {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+
+  .body-lead {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 600px;
+    margin-top: 24px;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--hairline);
+    margin-top: 80px;
+    padding-top: 40px;
+  }
+
+  .stat {
+    padding-right: 32px;
+  }
+
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+
+  /* ── COVER ── */
+  #cover {
+    background: var(--ink);
+    color: var(--paper);
+    min-height: 100vh;
+  }
+
+  #cover .eyebrow { color: rgba(247,244,238,0.5); }
+  #cover .stat-grid { border-color: rgba(247,244,238,0.12); }
+  #cover .stat-num { color: var(--paper); }
+  #cover .stat-label { color: rgba(247,244,238,0.45); }
+  #cover .body-lead { color: rgba(247,244,238,0.65); }
+
+  #cover .cta-row {
+    margin-top: 56px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 16px 32px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(247,244,238,0.7);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(247,244,238,0.3);
+    padding-bottom: 4px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--paper); border-color: var(--paper); }
+
+  /* ── 3-PARTY MODEL ── */
+  .party-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    margin-top: 56px;
+  }
+
+  .party-card {
+    background: var(--paper);
+    padding: 48px 40px;
+  }
+
+  .party-n {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(10,10,10,0.2);
+    margin-bottom: 20px;
+  }
+
+  .party-name {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .party-role {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    margin-bottom: 24px;
+  }
+
+  .party-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .party-grid { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── COMMERCIAL MODEL ── */
+  .commercial-list {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .commercial-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    border-top: 1px solid var(--hairline);
+    padding: 32px 0;
+  }
+
+  .commercial-n {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: rgba(10,10,10,0.12);
+    line-height: 1;
+    width: 60px;
+    flex-shrink: 0;
+  }
+
+  .commercial-content h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .commercial-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 520px;
+  }
+
+  /* ── CREATORS ── */
+  .creator-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    margin-top: 56px;
+  }
+
+  @media (max-width: 768px) {
+    .creator-grid { grid-template-columns: 1fr; }
+  }
+
+  .creator-card {
+    background: var(--paper);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .creator-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--taupe);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .creator-card:hover::before { opacity: 1; }
+
+  .creator-emoji {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .creator-name {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+
+  .creator-brand {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    margin-bottom: 20px;
+  }
+
+  .creator-bio {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .creator-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .creator-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .creator-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .creator-stat-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── WHY SECTION ── */
+  #why { background: var(--beige); }
+
+  .pillars {
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .pillar {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    border-top: 1px solid rgba(10,10,10,0.12);
+    padding: 36px 0;
+  }
+
+  .pillar-n {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    font-weight: 300;
+    color: rgba(10,10,10,0.15);
+    line-height: 1;
+    width: 72px;
+    flex-shrink: 0;
+  }
+
+  .pillar-content h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .pillar-content p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 520px;
+  }
+
+  /* ── CLOSING ── */
+  #closing {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    align-items: center;
+  }
+
+  #closing .eyebrow { color: rgba(247,244,238,0.4); }
+
+  #closing .display-xl {
+    max-width: 14ch;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  #closing .body-lead {
+    color: rgba(247,244,238,0.55);
+    text-align: center;
+    max-width: 480px;
+    margin: 24px auto 0;
+  }
+
+  #closing .contact-block {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(247,244,238,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #closing .contact-name {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--paper);
+  }
+
+  #closing .contact-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(247,244,238,0.45);
+  }
+
+  #closing .contact-email {
+    font-size: 14px;
+    color: var(--taupe);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,168,139,0.4);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+    margin-top: 4px;
+  }
+  #closing .contact-email:hover { border-color: var(--taupe); }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--taupe);
+    margin-bottom: 40px;
+  }
+
+  /* ── FADE IN ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── HIGHLIGHT ── */
+  .highlight {
+    color: var(--taupe);
+    font-style: italic;
+  }
+
+  /* ── TAG ── */
+  .tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--beige);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  /* ── QUOTE ── */
+  .pull-quote {
+    border-left: 2px solid var(--taupe);
+    padding-left: 32px;
+    margin: 48px 0;
+  }
+
+  .pull-quote p {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+
+  /* ── METRICS ── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    margin-top: 48px;
+  }
+
+  @media (max-width: 768px) {
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .metric-card {
+    background: var(--paper);
+    padding: 36px 32px;
+  }
+
+  .metric-num {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .metric-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  .metric-sub {
+    font-size: 12px;
+    color: var(--taupe);
+    margin-top: 6px;
+    font-weight: 300;
+  }
+
+  @media print { nav, footer, #download-btn { display: none !important; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#cover" class="nav-logo">GoWish</a>
+  <button id="download-btn" onclick="downloadPDF()" style="display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);border:none;padding:10px 22px;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;opacity:1;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </button>
+  <ul class="nav-links">
+    <li><a href="#model">The Model</a></li>
+    <li><a href="#platform">Platform</a></li>
+    <li><a href="#why">Why GoWish</a></li>
+    <li><a href="#commercial">Commercial</a></li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="#closing">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- COVER -->
+<section id="cover">
+  <div class="fade-in">
+    <p class="eyebrow">An Exclusive Partnership Concept</p>
+    <h1 class="display-xl" style="color: #F7F4EE;">
+      GoWish ×<br>Brand ×<br><em class="highlight">Celebrity</em>
+    </h1>
+    <p class="body-lead">
+      The world's biggest celebrities already have the audience, the product, and the demand.
+      What they're missing is a platform that turns that demand into tracked, gifted, scalable revenue — globally.
+    </p>
+    <div class="cta-row">
+      <a href="#model" class="btn-primary">
+        See the model
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="stat-grid fade-in">
+    <div class="stat">
+      <div class="stat-num">20M+</div>
+      <div class="stat-label">Global users on GoWish</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">38.3M</div>
+      <div class="stat-label">Active wishlists</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">825M+</div>
+      <div class="stat-label">Active product wishes</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="fade-in">
+    <p class="eyebrow">About GoWish</p>
+    <div class="section-divider"></div>
+    <h2 class="display-lg">An inspiration platform<br>with <em class="highlight">intent.</em></h2>
+    <p class="body-lead">
+      GoWish is one of Scandinavia's biggest platforms — a wishlist-native destination where 20 million users
+      save, share, and gift products they actually want. Unlike social media, GoWish captures declared
+      purchase intent, not just impressions.
+    </p>
+  </div>
+
+  <div class="pull-quote fade-in">
+    <p>"When a fan saves a product to their GoWish list, that's not a view — it's a conversion signal. We turn that signal into tracked revenue."</p>
+  </div>
+
+  <div class="metrics-grid fade-in">
+    <div class="metric-card">
+      <div class="metric-num">825M+</div>
+      <div class="metric-label">Active wishes</div>
+      <div class="metric-sub">Products saved with intent</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">3.4B+</div>
+      <div class="metric-label">GMV facilitated</div>
+      <div class="metric-sub">Tracked through GoWish</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">6.5M+</div>
+      <div class="metric-label">Conversions</div>
+      <div class="metric-sub">From wish to purchase</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">20M+</div>
+      <div class="metric-label">Active users</div>
+      <div class="metric-sub">Across Scandinavia &amp; beyond</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 16px;" class="fade-in awards-row">
+    <div style="display: flex; align-items: flex-start; gap: 12px; border: 1px solid var(--hairline); padding: 16px 24px; background: var(--beige); flex: 1; min-width: 260px;">
+      <span style="font-size: 20px; flex-shrink: 0;">🏆</span>
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink);">2× TikTok Case Study Award</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 3px; font-weight: 300;">Recognised by TikTok for outstanding campaign performance</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: flex-start; gap: 12px; border: 1px solid var(--hairline); padding: 16px 24px; background: var(--beige); flex: 1; min-width: 260px;">
+      <span style="font-size: 20px; flex-shrink: 0;">👻</span>
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink);">Snapchat Case Study &amp; Investor Letter</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 3px; font-weight: 300;">Featured in Snapchat's commerce case study and mentioned in Snapchat investor letters</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: flex-start; gap: 12px; border: 1px solid var(--hairline); padding: 16px 24px; background: var(--beige); flex: 1; min-width: 260px;">
+      <span style="font-size: 20px; flex-shrink: 0;">🇺🇸</span>
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink);">Multiple #1 Most Downloaded — US App Store</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 3px; font-weight: 300;">Ranked #1 most downloaded app in the United States multiple times</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3-PARTY MODEL -->
+<section id="model">
+  <div class="fade-in">
+    <p class="eyebrow">The Partnership Model</p>
+    <div class="section-divider"></div>
+    <h2 class="display-lg">Three parties.<br>One campaign.<br><em class="highlight">Shared upside.</em></h2>
+    <p class="body-lead">
+      This isn't a standard influencer deal. The celebrity <em>is</em> the brand.
+      GoWish becomes the global distribution engine that activates their existing demand —
+      with full performance attribution.
+    </p>
+  </div>
+
+  <div class="party-grid fade-in">
+    <div class="party-card">
+      <div class="party-n">01</div>
+      <div class="party-name">GoWish</div>
+      <div class="party-role">Distribution & Marketing</div>
+      <div class="party-desc">
+        Funds and executes paid social campaigns across Meta and TikTok.
+        Provides the wishlist platform, 20M+ users with active purchase intent,
+        and full-service performance marketing — at zero upfront cost to the brand.
+      </div>
+    </div>
+    <div class="party-card">
+      <div class="party-n">02</div>
+      <div class="party-name">The Celebrity</div>
+      <div class="party-role">Trust & Reach</div>
+      <div class="party-desc">
+        Provides likeness for video and image ads. Amplifies the campaign organically
+        across owned channels. As the <em>founder</em> of the brand, their authenticity is
+        the campaign — not a paid endorsement, but a real founder story.
+      </div>
+    </div>
+    <div class="party-card">
+      <div class="party-n">03</div>
+      <div class="party-name">Their Brand</div>
+      <div class="party-role">Product & Fulfilment</div>
+      <div class="party-desc">
+        Provides the products, pricing, and fulfilment. Receives new, high-intent
+        customers at scale. The celebrity-founder captures 20% commission on every
+        tracked sale — from their own brand.
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-quote fade-in" style="margin-top: 64px;">
+    <p>"The celebrity already has the demand. We already have the distribution. The brand is the natural product of both."</p>
+  </div>
+</section>
+
+<!-- PLATFORM SCALE -->
+<section id="platform">
+  <div class="fade-in">
+    <p class="eyebrow">Platform Scale</p>
+    <div class="section-divider"></div>
+    <h2 class="display-lg">One of Scandinavia's<br>biggest platforms —<br><em class="highlight">already working.</em></h2>
+    <p class="body-lead">
+      GoWish isn't a new bet. It's a proven commerce platform with 61,000+ active merchant and brand collaborations,
+      825 million wishes, and 3.4 billion in facilitated GMV. The infrastructure is live. The audience is ready.
+    </p>
+  </div>
+
+  <div class="metrics-grid fade-in" style="margin-top: 56px;">
+    <div class="metric-card">
+      <div class="metric-num">61K+</div>
+      <div class="metric-label">Brand &amp; merchant collabs</div>
+      <div class="metric-sub">Active on the platform</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">825M+</div>
+      <div class="metric-label">Active wishes</div>
+      <div class="metric-sub">Declared purchase intent</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">3.4B+</div>
+      <div class="metric-label">GMV facilitated</div>
+      <div class="metric-sub">Real tracked commerce</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">6.5M+</div>
+      <div class="metric-label">Conversions</div>
+      <div class="metric-sub">From wish to purchase</div>
+    </div>
+  </div>
+
+  <div class="pull-quote fade-in">
+    <p>"61,000 brands already trust GoWish to reach their customers. A celebrity-owned brand entering this network steps into proven distribution — not a pilot."</p>
+  </div>
+
+  <div style="margin-top: 8px;" class="fade-in">
+    <p class="eyebrow" style="margin-bottom: 24px;">Why scale matters for celebrity brands</p>
+    <div class="scale-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline);">
+      <div style="background: var(--paper); padding: 36px 32px;">
+        <div style="font-family: 'Fraunces', serif; font-size: 18px; margin-bottom: 10px;">Network effect</div>
+        <p style="font-size: 14px; line-height: 1.7; color: var(--muted); font-weight: 300;">61,000 brands means 61,000 complementary wishlist contexts. A celebrity's products appear alongside the items their fans already save.</p>
+      </div>
+      <div style="background: var(--paper); padding: 36px 32px;">
+        <div style="font-family: 'Fraunces', serif; font-size: 18px; margin-bottom: 10px;">Gifting moments</div>
+        <p style="font-size: 14px; line-height: 1.7; color: var(--muted); font-weight: 300;">Birthdays, holidays, celebrations — GoWish's seasonal gifting peaks drive repeat revenue for every brand on the platform, automatically.</p>
+      </div>
+      <div style="background: var(--paper); padding: 36px 32px;">
+        <div style="font-family: 'Fraunces', serif; font-size: 18px; margin-bottom: 10px;">Proven attribution</div>
+        <p style="font-size: 14px; line-height: 1.7; color: var(--muted); font-weight: 300;">6.5 million tracked conversions means the measurement model is battle-tested. Every sale is attributed, every commission is verified.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GOWISH -->
+<section id="why">
+  <div class="fade-in">
+    <p class="eyebrow">Why GoWish</p>
+    <div class="section-divider"></div>
+    <h2 class="display-lg">Five reasons the<br>celebrity-brand model<br><em class="highlight">wins here.</em></h2>
+  </div>
+
+  <div class="pillars fade-in">
+    <div class="pillar">
+      <div class="pillar-n">01</div>
+      <div class="pillar-content">
+        <h3>Wishlist intent is purchase intent</h3>
+        <p>When a user saves a product on GoWish, they've declared they want it — or want to give it as a gift. This is fundamentally different from a TikTok view or an Instagram like. Every save is a warm lead.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-n">02</div>
+      <div class="pillar-content">
+        <h3>GoWish funds the paid social</h3>
+        <p>The celebrity-brand pays nothing upfront for advertising. GoWish runs and funds the Meta and TikTok campaigns using the celebrity's likeness — reducing the brand's CAC to zero for GoWish-sourced customers.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-n">03</div>
+      <div class="pillar-content">
+        <h3>20M+ users who already gift</h3>
+        <p>GoWish's user base is gift-active by behaviour — they share lists, buy for others, and return for seasonal moments. Celebrity-brand products are the highest-converting gift category on the platform.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-n">04</div>
+      <div class="pillar-content">
+        <h3>Full attribution, not impressions</h3>
+        <p>Every sale through GoWish is tracked from wishlist save to checkout completion. The celebrity-brand receives transparent performance data — not vanity metrics. Commission is paid on real revenue only.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-n">05</div>
+      <div class="pillar-content">
+        <h3>Global distribution, local relevance</h3>
+        <p>GoWish operates across 15+ markets with localised campaigns. A celebrity-brand that sells globally gets GoWish's full international distribution stack — without building it themselves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIAL MODEL -->
+<section id="commercial">
+  <div class="fade-in">
+    <p class="eyebrow">The Commercial Model</p>
+    <div class="section-divider"></div>
+    <h2 class="display-lg">How everyone<br>gets paid.</h2>
+    <p class="body-lead">
+      A performance-based structure where every party earns on real results —
+      not promises, impressions, or upfront fees.
+    </p>
+  </div>
+
+  <div class="commercial-list fade-in">
+    <div class="commercial-item">
+      <div class="commercial-n">01</div>
+      <div class="commercial-content">
+        <h3>20% commission on tracked sales</h3>
+        <p>GoWish earns 20% on every sale attributed through the platform. No flat fees, no minimum guarantees.
+        The celebrity-brand only pays when GoWish delivers paying customers. Full stop.</p>
+      </div>
+    </div>
+    <div class="commercial-item">
+      <div class="commercial-n">02</div>
+      <div class="commercial-content">
+        <h3>GoWish funds &amp; runs paid social</h3>
+        <p>Meta and TikTok ad spend is covered entirely by GoWish. We create, run, and optimise the campaigns.
+        The celebrity-brand provides likeness approval — GoWish does the rest. Zero ad budget required from the brand.</p>
+      </div>
+    </div>
+    <div class="commercial-item">
+      <div class="commercial-n">03</div>
+      <div class="commercial-content">
+        <h3>Celebrity licenses likeness for ads</h3>
+        <p>The celebrity grants GoWish a limited licence to use their image and video in campaign ads.
+        As the founder of the brand, this is simply authentic storytelling — not a paid endorsement performance.
+        Usage rights are scoped, time-bound, and agreed per campaign.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases" style="background: var(--beige);">
+  <div class="fade-in">
+    <p class="eyebrow">Proven Results</p>
+    <div class="section-divider"></div>
+    <h2 class="display-lg">What happens when<br>celebrities bring their<br><em class="highlight">brand to GoWish.</em></h2>
+    <p class="body-lead">
+      Two real campaigns. Real growth. We work with 61,000+ brands and merchants —
+      and we respect their revenue privacy completely. That's why brand names are not disclosed.
+      The numbers, however, are real.
+    </p>
+  </div>
+
+  <!-- CASE 1 -->
+  <div class="fade-in" style="margin-top: 64px; border: 1px solid rgba(10,10,10,0.12); background: var(--paper);">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(10,10,10,0.08);">
+
+      <div style="background: var(--paper); padding: 48px 40px;">
+        <div style="font-family: 'Fraunces', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 20px;">Case 01 — Fashion</div>
+        <h3 style="font-family: 'Fraunces', serif; font-size: 28px; font-weight: 300; line-height: 1.2; margin-bottom: 20px;">American clothing brand<br>drives significant revenue growth<br>through GoWish</h3>
+        <p style="font-size: 14px; line-height: 1.8; color: var(--muted); font-weight: 300; margin-bottom: 28px;">
+          A popular US fashion brand — selling jackets, pants, and shoes — had built a loyal
+          following but was leaving revenue on the table between campaigns.
+          By launching a 3-month Premium GoWish partnership, they repositioned their products
+          inside GoWish's inspirational universe: directly in front of high-intent shoppers
+          who save, share, and gift fashion.
+        </p>
+        <p style="font-size: 14px; line-height: 1.8; color: var(--muted); font-weight: 300;">
+          The result was significant growth across visibility, wishlist saves, and tracked sales —
+          converting passive brand awareness into measurable, attributed revenue.
+          The campaign validated GoWish as a full-funnel commerce channel, not just a discovery tool.
+        </p>
+        <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--hairline);">
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);">Category</span>
+          <span style="font-size: 13px; color: var(--ink); margin-left: 12px;">Fashion · Apparel · Footwear</span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-left: 24px;">Market</span>
+          <span style="font-size: 13px; color: var(--ink); margin-left: 12px;">United States</span>
+        </div>
+      </div>
+
+      <div style="background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; gap: 32px;">
+        <div>
+          <div style="font-family: 'Fraunces', serif; font-size: 56px; font-weight: 300; color: var(--paper); line-height: 1;">$3.1M</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,244,238,0.45); margin-top: 8px;">Revenue via GoWish — US only · 3 months</div>
+        </div>
+        <div style="width: 100%; height: 1px; background: rgba(247,244,238,0.1);"></div>
+        <div>
+          <div style="font-family: 'Fraunces', serif; font-size: 56px; font-weight: 300; color: var(--paper); line-height: 1;">52,400</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,244,238,0.45); margin-top: 8px;">Wishes created by users</div>
+        </div>
+        <div style="width: 100%; height: 1px; background: rgba(247,244,238,0.1);"></div>
+        <div>
+          <div style="font-family: 'Fraunces', serif; font-size: 56px; font-weight: 300; color: var(--paper); line-height: 1;">$143</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,244,238,0.45); margin-top: 8px;">Average order value (USD)</div>
+        </div>
+        <div style="width: 100%; height: 1px; background: rgba(247,244,238,0.1);"></div>
+        <div>
+          <div style="font-family: 'Fraunces', serif; font-size: 56px; font-weight: 300; color: var(--taupe); line-height: 1;">20%</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,244,238,0.45); margin-top: 8px;">Celebrity payout on tracked sales</div>
+        </div>
+      </div>
+
+    </div>
+    <div style="padding: 24px 40px; border-top: 1px solid var(--hairline); background: var(--paper);">
+      <p style="font-family: 'Fraunces', serif; font-size: 16px; font-style: italic; font-weight: 300; color: var(--ink);">
+        "$3.1M in 3 months, from one market. 52,400 users who saved the product before they bought it. That's not advertising — that's intent made visible."
+      </p>
+    </div>
+  </div>
+
+  <!-- CASE 2 -->
+  <div class="fade-in" style="margin-top: 32px; border: 1px solid rgba(10,10,10,0.12); background: var(--paper);">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(10,10,10,0.08);">
+
+      <div style="background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; gap: 32px;">
+        <div>
+          <div style="font-family: 'Fraunces', serif; font-size: 56px; font-weight: 300; color: var(--paper); line-height: 1;">$1.7M</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,244,238,0.45); margin-top: 8px;">Revenue for the brand · 2 months</div>
+        </div>
+        <div style="width: 100%; height: 1px; background: rgba(247,244,238,0.1);"></div>
+        <div>
+          <div style="font-family: 'Fraunces', serif; font-size: 64px; font-weight: 300; color: var(--paper); line-height: 1;">+57%</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,244,238,0.45); margin-top: 8px;">Increase in conversions</div>
+        </div>
+        <div style="width: 100%; height: 1px; background: rgba(247,244,238,0.1);"></div>
+        <div>
+          <div style="font-family: 'Fraunces', serif; font-size: 64px; font-weight: 300; color: var(--paper); line-height: 1;">+98%</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,244,238,0.45); margin-top: 8px;">More wishes generated</div>
+        </div>
+        <div style="width: 100%; height: 1px; background: rgba(247,244,238,0.1);"></div>
+        <div>
+          <div style="font-family: 'Fraunces', serif; font-size: 56px; font-weight: 300; color: var(--taupe); line-height: 1;">20%</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,244,238,0.45); margin-top: 8px;">Celebrity payout on tracked sales</div>
+        </div>
+      </div>
+
+      <div style="background: var(--paper); padding: 48px 40px;">
+        <div style="font-family: 'Fraunces', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 20px;">Case 02 — Multi-Category</div>
+        <h3 style="font-family: 'Fraunces', serif; font-size: 28px; font-weight: 300; line-height: 1.2; margin-bottom: 20px;">Multi-brand store achieves<br>57% increase in conversions<br>within 2 months</h3>
+        <p style="font-size: 14px; line-height: 1.8; color: var(--muted); font-weight: 300; margin-bottom: 28px;">
+          A multi-category retailer spanning beauty, fashion, home, and jewellery had been
+          on GoWish for over two years — but hadn't unlocked its full potential.
+          After upgrading to a Premium partnership and activating data-powered personalisation,
+          the platform's algorithm started matching their products to the right high-intent
+          shoppers at the right moment.
+        </p>
+        <p style="font-size: 14px; line-height: 1.8; color: var(--muted); font-weight: 300;">
+          Within just 2 months, conversions jumped 57% and wishes nearly doubled — meaning
+          almost twice as many users were declaring purchase intent on their products.
+          For a celebrity-owned brand spanning multiple categories, this is the growth model:
+          GoWish turns existing demand into tracked, scalable revenue.
+        </p>
+        <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--hairline);">
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);">Category</span>
+          <span style="font-size: 13px; color: var(--ink); margin-left: 12px;">Beauty · Fashion · Home · Jewellery</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="padding: 24px 40px; border-top: 1px solid var(--hairline); background: var(--paper);">
+      <p style="font-family: 'Fraunces', serif; font-size: 16px; font-style: italic; font-weight: 300; color: var(--ink);">
+        "$1.7M in 2 months. 98% more wishes. The demand was already there — GoWish gave it somewhere to go."
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<!-- CLOSING -->
+<section id="closing">
+  <div class="fade-in">
+    <p class="eyebrow">Let's build together</p>
+    <h2 class="display-xl">
+      Let's turn your<br>audience into<br><em class="highlight">revenue.</em>
+    </h2>
+
+    <div class="contact-block">
+      <div class="contact-name">GoWish Partnerships</div>
+      <div class="contact-title">Celebrity × Brand Programme</div>
+      <a href="mailto:jn@GoWish.com" class="contact-email">jn@GoWish.com</a>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  async function downloadPDF() {
+    const btn = document.getElementById('download-btn');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '⏳ Generating PDF...';
+    btn.disabled = true;
+
+    // Make all fade-in elements visible before capture
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ orientation: 'landscape', unit: 'px', format: [1920, 1080], compress: true });
+
+    const sections = document.querySelectorAll('section[id]');
+    let first = true;
+
+    for (const section of sections) {
+      const canvas = await html2canvas(section, {
+        scale: 1,
+        useCORS: true,
+        allowTaint: true,
+        logging: false,
+        width: section.scrollWidth,
+        height: section.scrollHeight,
+        windowWidth: 1920,
+        backgroundColor: null
+      });
+
+      const imgData = canvas.toDataURL('image/jpeg', 0.92);
+      const iw = canvas.width;
+      const ih = canvas.height;
+
+      // Scale to fill 1920×1080 (letterbox if needed)
+      const scale = Math.min(1920 / iw, 1080 / ih);
+      const sw = iw * scale;
+      const sh = ih * scale;
+      const x = (1920 - sw) / 2;
+      const y = (1080 - sh) / 2;
+
+      if (!first) pdf.addPage([1920, 1080], 'landscape');
+
+      // Fill background with section bg colour
+      const bg = window.getComputedStyle(section).backgroundColor;
+      const rgb = bg.match(/\d+/g);
+      if (rgb) {
+        pdf.setFillColor(parseInt(rgb[0]), parseInt(rgb[1]), parseInt(rgb[2]));
+        pdf.rect(0, 0, 1920, 1080, 'F');
+      }
+
+      pdf.addImage(imgData, 'JPEG', x, y, sw, sh);
+      first = false;
+    }
+
+    pdf.save('GoWish-Brand-Celebrity-Presentation.pdf');
+    btn.innerHTML = originalHTML;
+    btn.disabled = false;
+  }
+</script>
+<script>
+  // Fade in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Active nav link
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = '';
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.style.color = '#0A0A0A';
+          }
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => navObserver.observe(s));
+</script>
+
+</body>
+</html>
